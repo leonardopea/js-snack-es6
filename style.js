@@ -113,3 +113,64 @@ aula.forEach((item) => {
 
     }
 })
+
+
+
+
+// SNACK 3
+
+const biciclette = [
+
+
+    {'modello': 'biciona', 'peso' : 7},
+    {'modello': 'biciclotta', 'peso' : 4},
+    {'modello': 'ruotina', 'peso' : 8},
+    {'modello': 'cicloswag', 'peso' : 6},
+    {'modello': 'bidone', 'peso' : 9},
+
+
+
+
+];
+
+
+const {modello} = biciclette;
+console.log(modello);
+
+
+
+
+
+
+// SNACK 4
+
+
+const squadre = [
+
+
+    {'nome': 'Sassuolo', 'punti_fatti' : 0, 'falli subiti' : 0},
+    {'nome': 'Cagliari', 'punti_fatti' : 0, 'falli subiti' : 0},
+    {'nome': 'Brescia', 'punti_fatti' : 0, 'falli subiti' : 0},
+    {'nome': 'Pordenone', 'punti_fatti' : 0, 'falli subiti' : 0},
+    {'nome': 'Reggina', 'punti_fatti' : 0, 'falli subiti' : 0},
+
+
+
+
+];
+
+// funzione per numeri casuali
+
+function NumeriCasuali(min, max){
+    return Math.floor(Math.random() * (max - min + 1 ) + min);
+}
+
+
+punti_fatti = NumeriCasuali(0,100);
+
+squadre.forEach((item) => {
+
+    item.punti_fatti = punti_fatti;
+
+    console.log(squadre)
+})
