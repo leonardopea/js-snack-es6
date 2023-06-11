@@ -151,11 +151,11 @@ console.log(`la bici che pesa meno è la ${bici.modello} con un peso di ${bici.p
 const squadre = [
 
 
-    {'nome': 'Sassuolo', 'punti_fatti' : 0, 'falli subiti' : 0},
-    {'nome': 'Cagliari', 'punti_fatti' : 0, 'falli subiti' : 0},
-    {'nome': 'Brescia', 'punti_fatti' : 0, 'falli subiti' : 0},
-    {'nome': 'Pordenone', 'punti_fatti' : 0, 'falli subiti' : 0},
-    {'nome': 'Reggina', 'punti_fatti' : 0, 'falli subiti' : 0},
+    {'nome': 'Sassuolo', 'punti_fatti' : 0, 'falli_subiti' : 0},
+    {'nome': 'Cagliari', 'punti_fatti' : 0, 'falli_subiti' : 0},
+    {'nome': 'Brescia', 'punti_fatti' : 0, 'falli_subiti' : 0},
+    {'nome': 'Pordenone', 'punti_fatti' : 0, 'falli_subiti' : 0},
+    {'nome': 'Reggina', 'punti_fatti' : 0, 'falli_subiti' : 0},
 
 
 
@@ -165,15 +165,29 @@ const squadre = [
 // funzione per numeri casuali
 
 function NumeriCasuali(min, max){
-    return Math.floor(Math.random() * (max - min + 1 ) + min);
+    return Math.floor(Math.random() * (max - min + 1 ) - min);
 }
 
 
-punti_fatti = NumeriCasuali(0,100);
-
-squadre.forEach((item) => {
-
-    item.punti_fatti = punti_fatti;
-
-    console.log(squadre)
+squadre.forEach((element) => {
+    element.punti_fatti = NumeriCasuali(1,100);
+    element.falli_subiti = NumeriCasuali(1,100);
 })
+
+console.log(squadre)
+
+
+
+const squadre_falli = squadre.map((element) => {
+
+    const {nome, falli_subiti} = element;
+
+    let obj = {
+        nome,
+        falli_subiti
+
+    }
+    return obj;
+});
+
+console.log(squadre_falli);
