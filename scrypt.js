@@ -134,11 +134,14 @@ const biciclette = [
 ];
 
 
-const {modello} = biciclette;
-console.log(modello);
+let bici = biciclette[0]
+for (let i=0; i<biciclette.length; i++){
+    if (biciclette[i].peso < bici.peso){
+        bici = biciclette[i];
+    }
+}
 
-
-
+console.log(`la bici che pesa meno è la ${bici.modello} con un peso di ${bici.peso} KG`)
 
 
 
